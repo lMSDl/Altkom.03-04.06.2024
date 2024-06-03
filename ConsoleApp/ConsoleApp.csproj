@@ -11,6 +11,7 @@
 
 	<ItemGroup>
 		<Using Remove="System" />
+		<Using Remove="System.Linq" />
 		<Using Include="System.Text.Json" />
 	</ItemGroup>
 	

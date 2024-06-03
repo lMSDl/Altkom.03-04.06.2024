@@ -1,8 +1,4 @@
-﻿using ConsoleApp;
-using System;
-using System.Xml.Linq;
-
-//namespace ConsoleApp
+﻿//namespace ConsoleApp
 //{
 //    internal class Program
 //    {
@@ -10,96 +6,65 @@ using System.Xml.Linq;
 //        {
 
 
-//deklaracja z inicjalizacją
-string helloVariable = "Hello";
-
-Console.WriteLine("Podaj imię:");
-string targetValue = Console.ReadLine();
-
-Console.WriteLine(helloVariable);
-
-Console.Write(helloVariable);
-Console.WriteLine(targetValue);
-
-//deklaracja zmiennej o typie string (ciąg/łańcuch znaków) i nazwie output
-string output;
-//nie możemy używać niezainicjalizowanej zmiennej
-
-//inicjalizacja zmiennej - pierwsze przypisanie wartości
-//łączenie stringów za pomocą operatora +
-output = helloVariable + " " + targetValue + "!";
-Console.WriteLine(output);
 
 
-string format = "{0} {1}!"; //wartości w nazwiasach oznaczają indeks parametru, który ma być wstawiony w to miejsce
-output = string.Format(format, helloVariable, targetValue); //łączenie stringów za pomocą funkcji format
+//Examples.HelloWorld();
+//Examples.StringsAndNumbers();
 
-Console.WriteLine(output);
 
-//zmiana wartości - każde kolejne przypisanie wartości
-output = "{helloVariable} {targetValue}!";
-Console.WriteLine(output);
+using System;
 
-output = $"{helloVariable} {targetValue}!"; //łączenie wykorzystujące interpolację (string interpolowany)
-Console.WriteLine(output);
+int a = 5;
+int b = 10;
+int c = 15;
+
+
+//deklaracja tablicy przechowującej dane typu int
+//[] - tablica
+int[] array;
+
+//inicjalizujemy zmienną nową tablicą typu int o rozmiarze 3
+//tablica wypełniana jest wartościami domyślnymi zadeklarowanego typu (dla int jest to 0)
+array = new int[3];
+
+Console.WriteLine(  );
+
+Console.WriteLine(array[0]);
+Console.WriteLine(array[1]);
+Console.WriteLine(array[2]);
+
+//tablice są indeksowane od 0 (minimalny indeks)
+//odwołujemy się do pierwszgo elemntu tablicy, czyli pod indeks 0
+array[0] = a;
+array[1] = 10;
+
+foreach ( int i in array )
+{
+    Console.WriteLine(i);
+}
+
+//maksymalny indeks tablicy to rozmiar minus 1 (3 - 1 = 2)
+//array[2] = c;
+array[array.Length - 1] = int.Parse(System.Console.ReadLine());
+
+
+for ( int i = 0; i < array.Length; i++ )
+{
+    Console.WriteLine(array[i]);
+}
+
+Console.WriteLine($"Tablica ma rozmiar {array.Length}");
+
+Array.Resize(ref array, 6);
+
+Console.WriteLine($"Tablica ma rozmiar {array.Length}");
 
 string input = Console.ReadLine();
 
-//parsowanie/konwersja string na float
-//float a = float.Parse(input);
-float a;
-
-//TryParse - zwraca wartość bool mówiącą czy parsowanie się powiodło
-//out - parameter wyjściowy - parametr przez który metoda może nam zwrócić jakąś dodatkową wartość (w tym przypadku jest to wynik parsowania)
-// jeśli parsowanie się nie powiodło, to w parametrze wyjściowym będzie wpisana wartość domyślna typu (dla typów liczbowych jest to 0)
-bool success = float.TryParse(input, out a);
-
-if (success)
-{
-    float b = a * 6;
-
-    Console.WriteLine(b);
-}
-else
-{
-    Console.WriteLine("Błędna wartość");
-}
-
-static void HelloWorld()
-{
-    Console.WriteLine("Hello, World!");
-    void Sth() { }
+string[] splittedInput = input.Split();
 
 
-    int? a = 5;
-    a = null;
-
-    Person? p = new Person();
-    p.Name = "Ewa";
-
-    ChangeInt(a);
-
-    p = null;
-
-    if (p != null)
-        ChangePerson(p);
-
-    Console.WriteLine(a);
-    Console.WriteLine(p.Name);
-
-
-    void ChangeInt(int? a)
-    {
-        a = 6;
-    }
-
-    void ChangePerson(Person p)
-    {
-        p.Name = "Adam";
-    }
-}
-
-
+Console.WriteLine($"Tablica ma rozmiar {splittedInput.Length}");
 //        }
 //   }
 //}
