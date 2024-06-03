@@ -10,6 +10,7 @@ using System.Xml.Linq;
 //        {
 
 
+//deklaracja z inicjalizacją
 string helloVariable = "Hello";
 
 Console.WriteLine("Podaj imię:");
@@ -20,8 +21,11 @@ Console.WriteLine(helloVariable);
 Console.Write(helloVariable);
 Console.WriteLine(targetValue);
 
+//deklaracja zmiennej o typie string (ciąg/łańcuch znaków) i nazwie output
 string output;
+//nie możemy używać niezainicjalizowanej zmiennej
 
+//inicjalizacja zmiennej - pierwsze przypisanie wartości
 //łączenie stringów za pomocą operatora +
 output = helloVariable + " " + targetValue + "!";
 Console.WriteLine(output);
@@ -32,6 +36,7 @@ output = string.Format(format, helloVariable, targetValue); //łączenie string�
 
 Console.WriteLine(output);
 
+//zmiana wartości - każde kolejne przypisanie wartości
 output = "{helloVariable} {targetValue}!";
 Console.WriteLine(output);
 
@@ -40,8 +45,13 @@ Console.WriteLine(output);
 
 string input = Console.ReadLine();
 
+//parsowanie/konwersja string na float
 //float a = float.Parse(input);
 float a;
+
+//TryParse - zwraca wartość bool mówiącą czy parsowanie się powiodło
+//out - parameter wyjściowy - parametr przez który metoda może nam zwrócić jakąś dodatkową wartość (w tym przypadku jest to wynik parsowania)
+// jeśli parsowanie się nie powiodło, to w parametrze wyjściowym będzie wpisana wartość domyślna typu (dla typów liczbowych jest to 0)
 bool success = float.TryParse(input, out a);
 
 if (success)
