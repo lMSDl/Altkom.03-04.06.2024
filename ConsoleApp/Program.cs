@@ -1,5 +1,6 @@
 ﻿using ConsoleApp;
 using System;
+using System.Xml.Linq;
 
 //namespace ConsoleApp
 //{
@@ -7,35 +8,71 @@ using System;
 //    {
 //        static void Main(string[] args)
 //        {
-            Console.WriteLine("Hello, World!");
-            void Sth() { }
 
 
-int? a = 5;
-a = null;
+string helloVariable = "Hello";
 
-Person? p = new Person();
-p.Name = "Ewa";
+Console.WriteLine("Podaj imię:");
+string targetValue = Console.ReadLine();
 
-ChangeInt(a);
+Console.WriteLine(helloVariable);
 
-p = null;
+Console.Write(helloVariable);
+Console.WriteLine(targetValue);
 
-if(p != null)
-    ChangePerson(p);
+string output;
 
-Console.WriteLine(a);
-Console.WriteLine(p.Name);
+//łączenie stringów za pomocą operatora +
+output = helloVariable + " " + targetValue + "!";
+Console.WriteLine(output);
 
 
-void ChangeInt(int? a)
+string format = "{0} {1}!"; //wartości w nazwiasach oznaczają indeks parametru, który ma być wstawiony w to miejsce
+output = string.Format(format, helloVariable, targetValue); //łączenie stringów za pomocą funkcji format
+
+Console.WriteLine(output);
+
+output = "{helloVariable} {targetValue}!";
+Console.WriteLine(output);
+
+output = $"{helloVariable} {targetValue}!"; //łączenie wykorzystujące interpolację (string interpolowany)
+Console.WriteLine(output);
+
+
+
+
+static void HelloWorld()
 {
-    a = 6;
-}
+    Console.WriteLine("Hello, World!");
+    void Sth() { }
 
-void ChangePerson(Person p)
-{
-    p.Name = "Adam";
+
+    int? a = 5;
+    a = null;
+
+    Person? p = new Person();
+    p.Name = "Ewa";
+
+    ChangeInt(a);
+
+    p = null;
+
+    if (p != null)
+        ChangePerson(p);
+
+    Console.WriteLine(a);
+    Console.WriteLine(p.Name);
+
+
+    void ChangeInt(int? a)
+    {
+        a = 6;
+    }
+
+    void ChangePerson(Person p)
+    {
+        p.Name = "Adam";
+    }
 }
 
 
