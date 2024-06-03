@@ -38,8 +38,22 @@ Console.WriteLine(output);
 output = $"{helloVariable} {targetValue}!"; //łączenie wykorzystujące interpolację (string interpolowany)
 Console.WriteLine(output);
 
+string input = Console.ReadLine();
 
+//float a = float.Parse(input);
+float a;
+bool success = float.TryParse(input, out a);
 
+if (success)
+{
+    float b = a * 6;
+
+    Console.WriteLine(b);
+}
+else
+{
+    Console.WriteLine("Błędna wartość");
+}
 
 static void HelloWorld()
 {
