@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace ConsoleApp
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+//namespace ConsoleApp
+//{
+//    internal class Program
+//    {
+//        static void Main(string[] args)
+//        {
             Console.WriteLine("Hello, World!");
-        }
-    }
-}
+            void Sth() { }
+//        }
+//   }
+//}
