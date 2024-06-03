@@ -1,4 +1,9 @@
-﻿//namespace ConsoleApp
+﻿
+
+using System;
+using System.Linq;
+
+//namespace ConsoleApp
 //{
 //    internal class Program
 //    {
@@ -11,8 +16,6 @@
 //Examples.HelloWorld();
 //Examples.StringsAndNumbers();
 
-
-using System;
 
 int a = 5;
 int b = 10;
@@ -37,21 +40,15 @@ Console.WriteLine(array[2]);
 //odwołujemy się do pierwszgo elemntu tablicy, czyli pod indeks 0
 array[0] = a;
 array[1] = 10;
+//maksymalny indeks tablicy to rozmiar minus 1 (3 - 1 = 2)
+//array[2] = c;
+array[array.Length - 1] = int.Parse(System.Console.ReadLine());
 
 foreach ( int i in array )
 {
     Console.WriteLine(i);
 }
 
-//maksymalny indeks tablicy to rozmiar minus 1 (3 - 1 = 2)
-//array[2] = c;
-array[array.Length - 1] = int.Parse(System.Console.ReadLine());
-
-
-for ( int i = 0; i < array.Length; i++ )
-{
-    Console.WriteLine(array[i]);
-}
 
 Console.WriteLine($"Tablica ma rozmiar {array.Length}");
 
@@ -65,6 +62,54 @@ string[] splittedInput = input.Split();
 
 
 Console.WriteLine($"Tablica ma rozmiar {splittedInput.Length}");
+
+
+
+
+
+
+//tworzymy nową listę. Lista po inicjalizacji jest pusta.
+List<string> strings = new List<string>();
+
+//dodajemy nowy element do listy, rozmiar tablicy się zwiększa
+strings.Add("!");
+strings.Add("ala");
+strings.Add("kota");
+
+//stawiamy element na konkretny indeks listy - pozostałe ementy przesuwają się
+strings.Insert(2, "ma");
+
+strings.Add("!");
+strings.Add("!");
+
+
+//usuwamy element pod indeksem 2 - rozmiar listy się zmniejsza
+strings.RemoveAt(2);
+//usuwamy element wg wartości - jeśli występuję więcej takich elementów, to usuwany jest pierwszy w kolejności
+strings.Remove("!");
+
+
+//w listach odwołujemy się do elementów po indeksach (tak jak w tablicach)
+strings[strings.Count - 1] = "?";
+
+
+strings = input.Split().ToList();
+
+Console.WriteLine($"Lista ma rozmiar: {strings.Count}");
+
+
+
+for (int i = 0; i < strings.Count; i++)
+{
+    Console.WriteLine(strings[i]);
+}
+
+
+
+
+
+
+
 //        }
 //   }
 //}
