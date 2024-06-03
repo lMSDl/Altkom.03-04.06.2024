@@ -69,5 +69,12 @@ namespace ConsoleApp
                 age = value;
             }
         }
+
+        //<modyfikator dostępu> <typ zwracany> <nazwa metody>()
+        public string GenerateInfo()
+        {
+            string info = $"{_firstName} {LastName}, wiek {Age}";
+            return info;
+        }
     }
 }
