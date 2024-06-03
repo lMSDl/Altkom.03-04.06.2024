@@ -15,6 +15,15 @@ namespace ConsoleApp
     // <modyfikator dostępu> class <nazwaKlasy>
     internal class Person
     {
+        public static int PopulationCounter { get; private set; }
+
+
+        public Person()
+        {
+            PopulationCounter += 1;
+        }
+
+
         //pole klasy (field)
         //private - oznacza dostęp tylko dla elementów danej klasy
         //pola zazwyczaj są prywatne ze względu na hermetyzację, a dostęp realizowany jest przez metody dostępowe (getter i setter)
@@ -77,6 +86,11 @@ namespace ConsoleApp
 
             //return - instukcja zwracająca wynik działania metody - obowiązkowy gdy zadeklarowaliśmy, że klasa coś zwraca (jest inna niż void)
             return info;
+        }
+
+        public static void Sth(string input)
+        {
+            Console.WriteLine(input);
         }
     }
 }

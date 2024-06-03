@@ -170,6 +170,8 @@ namespace ConsoleApp
             Person? p = new Person();
             p.SetFirstName("Ewa");
 
+            p = new Person();
+
             ChangeInt(a);
 
             //p = null;
@@ -179,7 +181,9 @@ namespace ConsoleApp
 
             Console.WriteLine(a);
             Console.WriteLine(p.GetFistName());
-
+            p.LastName = "Ewowska";
+            //Console.WriteLine( PersonExtensions.GetFullName(p) );
+            Console.WriteLine(p.GetFullName());
 
             void ChangeInt(int? a)
             {
