@@ -1,4 +1,5 @@
 ﻿
+using ConsoleApp;
 //namespace ConsoleApp
 //{
 //    internal class Program
@@ -9,7 +10,7 @@
 
 
 
-//Examples.HelloWorld();
+Examples.HelloWorld();
 //Examples.StringsAndNumbers();
 //Examples.ArraysAndLists();
 

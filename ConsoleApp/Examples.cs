@@ -168,17 +168,17 @@ namespace ConsoleApp
             a = null;
 
             Person? p = new Person();
-            p.Name = "Ewa";
+            p.SetFirstName("Ewa");
 
             ChangeInt(a);
 
-            p = null;
+            //p = null;
 
             if (p != null)
                 ChangePerson(p);
 
             Console.WriteLine(a);
-            Console.WriteLine(p.Name);
+            Console.WriteLine(p.GetFistName());
 
 
             void ChangeInt(int? a)
@@ -188,7 +188,7 @@ namespace ConsoleApp
 
             void ChangePerson(Person p)
             {
-                p.Name = "Adam";
+                p.SetFirstName("Adam");
             }
         }
 
