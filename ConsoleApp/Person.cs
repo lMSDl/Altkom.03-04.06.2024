@@ -69,5 +69,14 @@ namespace ConsoleApp
                 age = value;
             }
         }
+
+        //<modyfikator dostępu> <typ zwracany> <nazwa metody>()
+        public string GenerateInfo()
+        {
+            string info = $"{_firstName} {LastName}, wiek {Age}";
+
+            //return - instukcja zwracająca wynik działania metody - obowiązkowy gdy zadeklarowaliśmy, że klasa coś zwraca (jest inna niż void)
+            return info;
+        }
     }
 }
