@@ -1,5 +1,6 @@
 ﻿//namespace - przestrzeń nazw, czyli adres pod którym "mieszka" klasa
 //namespace zaciągamy używając "using"
+using System;
 using System.Xml.Linq;
 
 namespace ConsoleApp
@@ -37,6 +38,36 @@ namespace ConsoleApp
         {
             //instukcja zwracająca wynik działania metody - obowiązkowy gdy zadeklarowaliśmy, że klasa coś zwraca (jest inna niż void)
             return _firstName;
+        }
+
+        //Property - właściwość
+
+        //auto-property
+        //właściwość integruje w sobie pole i metody dostępowe (getter i setter)
+        //jest możliwość zmiany modyfikatora dostępu dla getter lub setter (osobno)
+        //możemy tylko ograniczać poziom dostępu dla gettera i settera (nie można określić właściwości jako private i następnie ustawić public get)
+        public string LastName { get; /*private*/ set; }
+
+
+        
+        //backfield do full-property - pozwala na dodatkowy kod w setterze i getterze
+        private int age;
+        //full-property
+        public int Age
+        {
+            //getter dla property
+            get
+            {
+                return age;
+            }
+            //setter dla property - posiada niejawny parametr o nazwie value
+            set
+            {
+                if (age <= 0)
+                    throw new ArgumentException();
+
+                age = value;
+            }
         }
     }
 }
