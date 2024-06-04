@@ -1,6 +1,6 @@
 ﻿
 using System;
-using ConsoleApp;
+using ConsoleApp.Delegates;
 //namespace ConsoleApp
 //{
 //    internal class Program
@@ -14,34 +14,11 @@ using ConsoleApp;
 //Examples.HelloWorld();
 //Examples.StringsAndNumbers();
 //Examples.ArraysAndLists();
+//Examples.Classes();
 
-Person p1 = new Person();
+new DelegatesExample().Test();
+new MulticastDelegateExample().Test();
 
-Console.WriteLine(p1.GenerateInfo());
-
-
-//Person p2 = new Person("Ewa", "Ewowska", 24);
-Person.CreateAsync("Ewa", "Ewowska", 24).ContinueWith(t =>
-{
-    Console.WriteLine(t.Result.GenerateInfo());
-});
-
-//wykorzystanie inicjalizatora
-Person p3 = new Person() { Age = 30, LastName = "Adamski" };
-p3.SetFirstName("Adam");
-Person p4 = new Person("Monika", "Monikowska", 42 );
-Console.WriteLine(p3.GenerateInfo());
-Console.WriteLine(p4.GenerateInfo());
-
-Person p5 = p3 + p4;
-
-
-Console.WriteLine(p5.GenerateInfo());
-
-
-
-
-Plant plant = new Plant("drzewo");
 
 
 
