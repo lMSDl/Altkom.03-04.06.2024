@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{BB596BD5-9452-4298-8CBD-7A47A07414FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{B0E8C734-CBA8-411C-816E-3FD1C878FECD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BB596BD5-9452-4298-8CBD-7A47A07414FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB596BD5-9452-4298-8CBD-7A47A07414FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB596BD5-9452-4298-8CBD-7A47A07414FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E8C734-CBA8-411C-816E-3FD1C878FECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0E8C734-CBA8-411C-816E-3FD1C878FECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0E8C734-CBA8-411C-816E-3FD1C878FECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0E8C734-CBA8-411C-816E-3FD1C878FECD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
