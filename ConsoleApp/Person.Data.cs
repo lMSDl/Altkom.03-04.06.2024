@@ -83,5 +83,14 @@ namespace ConsoleApp
         {
             Console.WriteLine(input);
         }
+
+
+        public static Person operator +(Person a, Person b)
+        {
+            Person c = new Person();
+            c.LastName = $"{a.LastName} / {b.LastName}";
+            c.SetFirstName($"{a.GetFistName()} / {b.GetFistName()}");
+            return c;
+        }
     }
 }

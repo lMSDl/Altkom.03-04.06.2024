@@ -28,8 +28,18 @@ Person.CreateAsync("Ewa", "Ewowska", 24).ContinueWith(t =>
 
 //wykorzystanie inicjalizatora
 Person p3 = new Person() { Age = 30, LastName = "Adamski" };
-
+p3.SetFirstName("Adam");
+Person p4 = new Person("Monika", "Monikowska", 42 );
 Console.WriteLine(p3.GenerateInfo());
+Console.WriteLine(p4.GenerateInfo());
+
+Person p5 = p3 + p4;
+
+
+Console.WriteLine(p5.GenerateInfo());
+
+
+
 
 Plant plant = new Plant("drzewo");
 

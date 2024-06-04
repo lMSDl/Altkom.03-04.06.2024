@@ -26,7 +26,7 @@ namespace ConsoleApp
         //jeśli w klasie występuje jakiś konstuktor parametrowy, to konstuktor bezparametrowy nie zostanie automatycznie wygenerowany
         //chcąc posiadać jednocześnie konstruktor parametrowy i bezparametrowy musimy go jawnie utworzyć
         //możemy tworzyć konstruktory teleskopowe, czyli łańcuch wywołań konstruktorów
-        private Person(string firstName, string lastName, int age) : this(firstName, lastName)
+        public Person(string firstName, string lastName, int age) : this(firstName, lastName)
         {
             this.age = age;
         }
