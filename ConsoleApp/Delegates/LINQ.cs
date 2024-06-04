@@ -41,8 +41,11 @@ namespace ConsoleApp.Delegates
 
 
             //1. posortować kolekcję strings po ilości liter w wyrazach
+            var result8 = strings.OrderBy(x => x.Length).ToList();
             //2. Zsumować wartości kolekcji numbers
+            var result9 = numbers.Sum();
             //3. Z People wybrać osoby, które mają na imię Piotr lub Ewa
+            var result10 = People.Where(x => x.GetFistName() == "Piotr" || x.GetFistName() == "Ewa").ToList();
         }
     }
 }
