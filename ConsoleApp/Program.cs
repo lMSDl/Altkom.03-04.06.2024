@@ -32,6 +32,10 @@ void Odd()
 Console.WriteLine("-----------");
 new BuildInDelegates().Test();
 
+Console.WriteLine("-----------");
+
+new LINQ().Test();
+
 Console.ReadLine();
 //        }
 //   }
