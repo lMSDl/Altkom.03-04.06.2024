@@ -39,6 +39,10 @@ namespace ConsoleApp.Delegates
 
             var result7 = strings.Where(x => x.Length >= 3).Where(x => x.Contains("a")).OrderBy(x => x).ToList();
 
+
+            //1. posortować kolekcję strings po ilości liter w wyrazach
+            //2. Zsumować wartości kolekcji numbers
+            //3. Z People wybrać osoby, które mają na imię Piotr lub Ewa
         }
     }
 }
