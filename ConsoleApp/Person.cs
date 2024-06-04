@@ -33,21 +33,44 @@ namespace ConsoleApp
         //jeśli w klasie występuje jakiś konstuktor parametrowy, to konstuktor bezparametrowy nie zostanie automatycznie wygenerowany
         //chcąc posiadać jednocześnie konstruktor parametrowy i bezparametrowy musimy go jawnie utworzyć
         //możemy tworzyć konstruktory teleskopowe, czyli łańcuch wywołań konstruktorów
-        public Person(string firstName, string lastName, int age) : this(firstName, lastName)
+        private Person(string firstName, string lastName, int age) : this(firstName, lastName)
         {
             this.age = age;
         }
         //przeciążenie metody = wiele metod o tej samej nazwie, ale przyjmujące inne parametry (konstruktor jest metodą)
-        public Person(string firstName, string lastName) : this(lastName)
+        private Person(string firstName, string lastName) : this(lastName)
         {
             _firstName = firstName;
         }
-        public Person(string lastName)
+        private Person(string lastName)
         {
             LastName = lastName.ToUpper();
         }
 
 
+        public static async Task<Person> CreateAsync(string firstName, string lastName, int age)
+        {
+            Person p = new Person(firstName, lastName, age);
+
+            await Task.Delay(5000);
+
+            return p;
+        }
+
+
+        public bool IsInitialized { get; private set; }
+        public void Initialize()
+        {
+            if (IsInitialized)
+            {
+                return;
+            }
+
+            //do sth
+            Thread.Sleep(5000);
+
+            IsInitialized = true;
+        }
 
 
         //pole klasy (field)
