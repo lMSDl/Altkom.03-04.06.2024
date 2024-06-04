@@ -1,7 +1,7 @@
 ﻿using Models;
 using Services;
 
-InMemoryService service = new InFileService();
+IService<Person> service = new InFileService<Person>();
 
 
 bool exit = false;
@@ -34,19 +34,19 @@ do
 
 void ShowItems()
 {
-    IEnumerable<ToDoItem> items = service.Read();
+    IEnumerable<Person> items = service.Read();
 
-    foreach (ToDoItem item in items)
+    foreach (Person item in items)
     {
-        Console.WriteLine($"{item.Id}.\t{(item.IsCompleted ? "(X)" : "( )")}\t{item.Task}");
+        Console.WriteLine($"{item.Id}.\t{(item.IsPresent ? "(X)" : "( )")}\t{item.Name}");
     }
 }
 
 void Add()
 {
-    Console.WriteLine("Describe your task:");
-    ToDoItem toDoItem = new(Console.ReadLine()!); //! - wyłącznie ostrzeżenia o możliwości pojawienia się null
-    service.Create(toDoItem);
+    Console.WriteLine("Provide name:");
+    Person Person = new() { Name = Console.ReadLine()! }; 
+    service.Create(Person);
 }
 
 void Delete()
@@ -58,19 +58,22 @@ void Delete()
 void Edit()
 {
     int id = ReadId();
-    ToDoItem? item = service.Read(id);
+    Person? item = service.Read(id);
     if (item != null)
     {
         Console.WriteLine("Change:");
-        item.Task = Console.ReadLine()!;
+        item.Name = Console.ReadLine()!;
     }
 }
 
 void ChangeState()
 {
     int id = ReadId();
-
-    _ = service.ChangeIsCompleted(id);
+    var item = service.Read(id);
+    if(item != null)
+    {
+        item.IsPresent = !item.IsPresent;
+    }
 }
 
 void ShowMenu()
