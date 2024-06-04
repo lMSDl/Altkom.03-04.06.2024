@@ -2,13 +2,14 @@
 
 namespace Services
 {
-    public class InMemoryService
+    public class InMemoryService : IService
     {
-        private readonly ICollection<ToDoItem> _items = [];
+        //protected - niedostępna na zewnątrz, ale dostępna w hierarchi dziedziczenia
+        protected ICollection<ToDoItem> _items = [];
 
-        public void Create(ToDoItem item)
+        public virtual void Create(ToDoItem item)
         {
-            int maxId = 0;
+            /*int maxId = 0;
 
             foreach (ToDoItem toDoItem in _items)
             {
@@ -17,21 +18,24 @@ namespace Services
                     maxId = toDoItem.Id;
                 }
             }
-            item.Id = maxId + 1;
+            item.Id = maxId + 1;*/
+
+            item.Id = _items.Select(item => item.Id).DefaultIfEmpty(0).Max() + 1;
 
             _items.Add(item);
         }
 
         public ToDoItem? Read(int id)
         {
-            foreach (ToDoItem toDoItem in _items)
+            /*foreach (ToDoItem toDoItem in _items)
             {
                 if (id == toDoItem.Id)
                 {
                     return toDoItem;
                 }
             }
-            return null;
+            return null;*/
+            return _items.Where(x => x.Id == id).SingleOrDefault();
         }
 
         public IEnumerable<ToDoItem> Read()
@@ -40,7 +44,7 @@ namespace Services
             return new List<ToDoItem>(_items);
         }
 
-        public bool Update(int id, ToDoItem item)
+        public virtual bool Update(int id, ToDoItem item)
         {
             if (!Delete(id))
             {
@@ -52,7 +56,7 @@ namespace Services
             return true;
         }
 
-        public bool Delete(int id)
+        public virtual bool Delete(int id)
         {
             ToDoItem? item = Read(id);
             if (item == null)
@@ -64,7 +68,7 @@ namespace Services
             return true;
         }
 
-        public bool ChangeIsCompleted(int id)
+        public virtual bool ChangeIsCompleted(int id)
         {
             ToDoItem? item = Read(id);
             if (item == null)

@@ -1,7 +1,7 @@
 ﻿using Models;
 using Services;
 
-InMemoryService service = new();
+IService service = new InFileService();
 
 
 bool exit = false;
