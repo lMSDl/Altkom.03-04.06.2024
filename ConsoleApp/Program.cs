@@ -19,8 +19,15 @@ using ConsoleApp.Delegates;
 new DelegatesExample().Test();
 new MulticastDelegateExample().Test();
 
-
-
+Console.WriteLine("-----------");
+EventsExample eventsExample = new EventsExample();
+eventsExample.OddNumberDelegate += Odd;
+eventsExample.OddNumberEvent += Odd;
+eventsExample.Test();
+void Odd()
+{
+    Console.WriteLine("!!!");
+}
 
 Console.ReadLine();
 //        }
