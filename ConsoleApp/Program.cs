@@ -21,13 +21,16 @@ new MulticastDelegateExample().Test();
 
 Console.WriteLine("-----------");
 EventsExample eventsExample = new EventsExample();
-eventsExample.OddNumberDelegate += Odd;
+//eventsExample.OddNumberDelegate += Odd;
 eventsExample.OddNumberEvent += Odd;
 eventsExample.Test();
 void Odd()
 {
     Console.WriteLine("!!!");
 }
+
+Console.WriteLine("-----------");
+new BuildInDelegates().Test();
 
 Console.ReadLine();
 //        }
